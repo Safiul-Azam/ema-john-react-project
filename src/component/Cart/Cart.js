@@ -1,3 +1,5 @@
+import React from 'react';
+import './Cart.css'
 
 const Cart = (props) => {
     const {cart} = props
@@ -11,7 +13,7 @@ const Cart = (props) => {
     const tex = parseFloat((total * 0.1).toFixed(2))
     const grandTotal = total + shipping + tex
     return (
-        <div>
+        <div className="cart-section">
             <h2>Order summary</h2>
             <p>Selected Items:{cart.length}</p>
             <p>Total Price:{total} </p>
