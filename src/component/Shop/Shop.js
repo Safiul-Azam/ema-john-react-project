@@ -20,6 +20,7 @@ const Shop = () => {
                 const quantity = storedProduct[id]
                 addedProduct.quantity = quantity
                 saveCart.push(addedProduct)
+
             }
         }
         setCart(saveCart)
@@ -27,11 +28,22 @@ const Shop = () => {
 
 
 
-    const handlerAddToCart = (product)=> {
-     const newCart = [...cart, product]
-     console.log(newCart)
+    const handlerAddToCart = (selectedProduct)=> {
+        const exists = cart.find(product => product.id === selectedProduct.id)
+        let newCart = []
+        if(!exists){
+            selectedProduct.quantity = 1
+            newCart = [...cart, selectedProduct]
+        }else{
+            const rest = cart.filter(product => product.id !== selectedProduct.id)
+            exists.quantity = exists.quantity + 1
+            newCart = [...rest,exists]
+        }
+        // console.log(selectedProduct)
+    //  const newCart = [...cart, selectedProduct]
+    //  console.log(newCart)
      setCart(newCart)
-     addToDb(product.id)
+     addToDb(selectedProduct.id)
     }
 
     return (
