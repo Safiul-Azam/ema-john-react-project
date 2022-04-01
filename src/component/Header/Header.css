@@ -6,6 +6,9 @@
     align-items: center;
     padding-right: 100px;
     padding-left: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 .header a{
     text-decoration: none;

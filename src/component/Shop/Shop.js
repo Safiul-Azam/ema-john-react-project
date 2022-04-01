@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import useCart from '../../hooks/useCart';
+import useProducts from '../../hooks/useProducts';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 const Shop = () => {
-    const [products, setProducts] = useState([])
-    const [cart , setCart] = useState([])
-    useEffect(()=>{
-        fetch('products.json')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
-    useEffect(()=>{
-    const storedProduct = getStoredCart()
-    const saveCart = []
-    for(const id in storedProduct){
-            const addedProduct = products.find(product => product.id === id)
-            if(addedProduct){
-                const quantity = storedProduct[id]
-                addedProduct.quantity = quantity
-                saveCart.push(addedProduct)
-
-            }
-        }
-        setCart(saveCart)
-    },[products])
+    const [products, setProducts] = useProducts()
+    // const [cart , setCart] = useState([])
+    const [cart , setCart] = useCart(products)
+    
+    // useEffect(()=>{
+    // const storedProduct = getStoredCart()
+    // const saveCart = []
+    // for(const id in storedProduct){
+    //         const addedProduct = products.find(product => product.id === id)
+    //         if(addedProduct){
+    //             const quantity = storedProduct[id]
+    //             addedProduct.quantity = quantity
+    //             saveCart.push(addedProduct)
+    //         }
+    //     }
+    //     setCart(saveCart)
+    // },[products])
 
 
 
