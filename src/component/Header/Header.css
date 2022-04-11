@@ -1,4 +1,5 @@
 .header{
+    
     background-color: #1C2B35;
     height: 60px;
     display: flex;
@@ -14,4 +15,7 @@
     text-decoration: none;
     margin-right: 20px;
     color:#dddddd
+}
+.navigation{
+    display: flex;
 }

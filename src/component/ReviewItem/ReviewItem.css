@@ -26,3 +26,17 @@
 .item-info h4{
     margin: 3px 0;
 }
+.delete-btn .icon-btn{
+    font-size: 25px;
+    color: #EB5757;
+}
+.delete-btn .delete-button{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(235, 87, 87, 0.3);
+}
+.color{
+    color: #FF9900;
+}
