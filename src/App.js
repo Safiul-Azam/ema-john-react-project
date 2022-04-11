@@ -5,6 +5,8 @@ import Header from './component/Header/Header';
 import Inventory from './component/Inventory/Inventory';
 import Order from './component/Order/Order';
 import Shop from './component/Shop/Shop'
+import Login from './component/Login/Login'
+import SignUp from './component/SignUp/SignUp'
 
 function App() {
   return (
@@ -16,6 +18,14 @@ function App() {
        <Route path='/order'element={<Order></Order>}></Route>
        <Route path="/about" element={<About></About>}></Route>
        <Route path="/manage-inventory" element={<Inventory></Inventory>}></Route>
+       <Route path='/login' element={<Login></Login>}></Route>
+       <Route path='/signup' element={<SignUp></SignUp>}></Route>
+       <Route path='*' element={
+         <div>
+           <h2>This page is not found</h2>
+           <h1>404</h1>
+         </div>
+       }></Route>
      </Routes>
     </div>
   );
