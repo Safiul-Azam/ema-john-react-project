@@ -13,27 +13,30 @@ const SignUp = () => {
 
     const handleEmailBlur = e =>{
         setEmail(e.target.value)
-        console.log(e.target.value)
     }
     const handlePasswordBlur = e =>{
         setPassword(e.target.value)
-        console.log(e.target.value)
     }
     if(user) {
         navigate('/shop')
     }
     const handleConfirmPasswordBlur = e=>{
-        setConfirmPassword()
+        setConfirmPassword(e.target.value)
     }
     const handleSubmitBlur = e =>{
+        console.log(password, confirmPassword)
         e.preventDefault();
         if(password !== confirmPassword){
             setError('password and confirm password dose not match !')
            return;
+        }else{
+            setError('')
         }
         if(password.length < 6){
             setError('password must be 6 characters or more then it!')
             return;
+        }else{
+            setError('')
         }
         createUserWithEmailAndPassword(email, password)
     }
