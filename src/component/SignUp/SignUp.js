@@ -45,21 +45,21 @@ const SignUp = () => {
         <div className='form-field'>
         <h2>Sign up</h2>
         <form onSubmit={handleSubmitBlur}>
-        <div className="input-group">
+        <div className="input-field">
             <label htmlFor="Email">Email</label>
             <input onBlur={handleEmailBlur} type="email" name="Email" placeholder='Your Email' />
         </div>
-        <div className="input-group">
+        <div className="input-field">
             <label htmlFor="Password">Password</label>
             <input onBlur={handlePasswordBlur} type="password" name="Password" placeholder='Your Password' />
         </div>
-        <div className="input-group">
+        <div className="input-field">
             <label htmlFor="ConfirmPassword">Confirm Password</label>
             <input onBlur={handleConfirmPasswordBlur} type="password" name="ConfirmPassword" placeholder='Your Confirm Password' />
         </div>
         <p style={{color: 'red'}}>{error}</p>
         <input className='login' type="submit" value="Sign Up" />
-        <p className='new-account'>Already have an account? <Link to='/signup'>log in</Link></p>
+        <p className='new-account'>Already have an account? <Link to='/login'>log in</Link></p>
         </form>
         </div>
     </div>

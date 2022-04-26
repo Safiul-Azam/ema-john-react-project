@@ -36,11 +36,11 @@ const Login = () => {
             <div className='form-field'>
             <h2>Log in</h2>
             <form onSubmit={handleSubmitBlur} >
-            <div className="input-group">
+            <div className="input-field">
                 <label htmlFor="Email">Email</label>
                 <input onBlur={handleEmailBlur} type="email" name="Email" placeholder='Your Email' required/>
             </div>
-            <div className="input-group">
+            <div className="input-field">
                 <label htmlFor="Password">Password</label>
                 <input onBlur={handlePasswordBlur} type="password" name="Password" placeholder='Your Password' required />
             </div>

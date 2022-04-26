@@ -31,7 +31,7 @@ const Shop = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container-product">
             <div className="products-container">
                 {
                     products.map(product => <Product

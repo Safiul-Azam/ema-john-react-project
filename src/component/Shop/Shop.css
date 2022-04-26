@@ -1,4 +1,4 @@
-.container{
+.container-product{
     display: grid;
     grid-template-columns: 4fr 1fr;
     margin-left: 50px;
