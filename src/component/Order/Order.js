@@ -8,7 +8,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Order = () => {
     const [products, setProducts] = useProducts()
-    const [cart , setCart] = useCart(products)
+    const [cart , setCart] = useCart()
     const handlerRemoveFromCart = product =>{
         const rest = cart.filter(pd => pd._id !== product._id)
         setCart(rest)
@@ -16,7 +16,7 @@ const Order = () => {
     }
     return (
         <div>
-            <div className="container-product">
+            <div className="shop-container">
                 <div className="review-container">
                     {
                         cart.map(product => <ReviewItem
